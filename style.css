@@ -46,7 +46,7 @@ html {
 
 body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--text-main);
   background-color: var(--bg-main);
@@ -194,134 +194,130 @@ nav a:hover {
 /* 히어로 섹션 */
 .hero-section {
   padding-top: 70px;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0;
 }
 
 .hero-panel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0;
-  padding: clamp(2.8rem, 4.8vw, 4.2rem) clamp(2.8rem, 6.4vw, 6.8rem);
-  min-height: auto;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 6vw, 5rem);
   background: var(--bg-main);
-  box-shadow: none;
-}
-
-.hero-panel::before {
-  content: none;
 }
 
 .hero-layout {
-  position: relative;
-  z-index: 1;
   display: grid;
-  grid-template-columns: 1.03fr 1fr;
-  gap: 2.6rem;
-  align-items: center;
-  max-width: 1660px;
+  grid-template-columns: 2fr 3fr;
+  gap: 0;
+  align-items: stretch;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
+/* ── 좌측 컬럼 ── */
 .hero-left {
-  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: clamp(2rem, 4vw, 4rem);
+  border-right: 1px solid #e2e8f0;
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 1.4rem;
 }
 
 .hero-name {
-  display: block;
-  margin-top: 0.95rem;
   color: #0f172a;
-  font-size: clamp(3.6rem, 8.1vw, 7.6rem);
+  font-size: clamp(3rem, 6vw, 5.5rem);
   line-height: 1;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.hero-divider {
+  width: 2.4rem;
+  height: 3px;
+  background: #334155;
+  margin: 1.2rem 0;
 }
 
 .hero-role {
-  display: block;
-  margin-top: 1.2rem;
   color: #64748b;
-  font-size: clamp(2rem, 3.6vw, 3.8rem);
-  line-height: 1.14;
-  font-weight: 300;
-  letter-spacing: -0.015em;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
-.hero-desc {
-  position: relative;
-  z-index: 1;
-  margin-top: 2.4rem;
-  max-width: 620px;
-  font-size: clamp(1.3rem, 1.75vw, 1.95rem);
-  font-weight: 500;
-  line-height: 1.48;
-  color: #475569;
-  margin-bottom: 2.6rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-}
-
-.hero-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 172px;
-  height: 64px;
-  border-radius: 999px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  transition: transform 0.22s ease, opacity 0.22s ease;
-}
-
-.hero-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.97;
-}
-
-.hero-btn-primary {
-  background: #3b82f6;
-  color: #ffffff;
-}
-
-.hero-btn-ghost {
-  background: #ffffff;
-  color: #334155;
-  border: 1px solid #cbd5e1;
-}
-
-.hero-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-visual img {
-  width: min(100%, 640px);
-  height: auto;
-  border-radius: 28px;
-  border: 1px solid rgba(148, 163, 184, 0.32);
-  box-shadow: 0 28px 48px -32px rgba(15, 23, 42, 0.34);
-}
-
-.hero-scroll {
-  position: absolute;
-  left: 50%;
-  bottom: 2rem;
-  transform: translateX(-50%);
-  z-index: 1;
+/* ── 우측 컬럼 ── */
+.hero-right {
+  padding-left: clamp(2rem, 4vw, 4rem);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-  color: #64748b;
-  font-family: 'JetBrains Mono', 'Consolas', monospace;
-  font-size: 1rem;
+  justify-content: center;
 }
 
-.hero-scroll i {
-  font-size: 1.35rem;
+.hero-about-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero-about-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.hero-about-line {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+  display: block;
+}
+
+.hero-info-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-info-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.hero-info-row:first-child {
+  border-top: 1px solid #f1f5f9;
+}
+
+.hero-info-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.hero-info-value {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.hero-info-value strong {
+  font-weight: 700;
+  color: #0f172a;
 }
 
 /* 소개 섹션 (정보 그리드) */
@@ -329,7 +325,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 0;
 }
@@ -554,6 +550,42 @@ nav a:hover {
 }
 
 /* Red */
+
+.tech-badge.ts {
+  background: #3178c6;
+}
+
+/* TypeScript Blue */
+.tech-badge.vue {
+  background: #42b883;
+}
+
+/* Vue Green */
+.tech-badge.redis {
+  background: #dc2626;
+}
+
+/* Redis Red */
+.tech-badge.jenkins {
+  background: #d33833;
+}
+
+/* Jenkins Red */
+.tech-badge.notion {
+  background: #374151;
+}
+
+/* Dark Gray */
+.tech-badge.figma {
+  background: #a259ff;
+}
+
+/* Figma Purple */
+.tech-badge.ai {
+  background: #7c3aed;
+}
+
+/* AI Purple */
 
 /* 반응형 */
 @media (max-width: 768px) {
@@ -943,42 +975,30 @@ footer {
 @media (max-width: 900px) {
   .hero-section {
     padding-top: 60px;
-    padding-bottom: 0;
   }
 
   .hero-panel {
-    min-height: auto;
-    border-radius: 0;
-    padding: 2.5rem 2.2rem;
+    padding: 2.5rem 1.8rem;
   }
 
   .hero-layout {
     grid-template-columns: 1fr;
-    gap: 1.6rem;
+    gap: 2rem;
   }
 
-  .hero-visual {
-    justify-content: flex-start;
+  .hero-left {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 2rem;
   }
 
-  .hero-desc {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: clamp(1.04rem, 2.4vw, 1.48rem);
+  .hero-right {
+    padding-left: 0;
   }
 
-  .hero-btn {
-    min-width: 154px;
-    height: 56px;
-    font-size: 0.96rem;
-  }
-
-  .hero-visual img {
-    width: min(100%, 560px);
-  }
-
-  .hero-scroll {
-    display: none;
+  .hero-name {
+    font-size: clamp(3rem, 9vw, 5rem);
   }
 
   .skills-grid {
@@ -1023,45 +1043,24 @@ footer {
   }
 
   .hero-panel {
-    min-height: auto;
-    padding: 2.2rem 1.9rem;
-    border-radius: 0;
+    padding: 1.8rem 1.2rem;
   }
 
   .hero-name {
-    font-size: clamp(2.35rem, 12.5vw, 3.9rem);
+    font-size: clamp(2.6rem, 11vw, 4rem);
   }
 
-  .hero-role {
-    margin-top: 0.5rem;
-    font-size: clamp(1.35rem, 6.2vw, 2rem);
-  }
-
-  .hero-desc {
-    margin-top: 1.4rem;
-    margin-bottom: 1.8rem;
-    font-size: 0.96rem;
-    line-height: 1.65;
-  }
-
-  .hero-actions {
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
-
-  .hero-btn {
-    min-width: 138px;
-    height: 50px;
+  .hero-about-desc {
     font-size: 0.9rem;
+    margin-bottom: 1.2rem;
   }
 
-  .hero-visual {
-    justify-content: center;
+  .hero-info-label {
+    min-width: 76px;
   }
 
-  .hero-visual img {
-    width: min(100%, 420px);
-    border-radius: 20px;
+  .hero-info-value {
+    font-size: 0.88rem;
   }
 
   .contact-shell {

@@ -8,7 +8,6 @@
   <meta name="description" content="백엔드 개발자 이현수의 포트폴리오입니다." />
   <meta name="author" content="이현수" />
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="포트폴리오, 이현수">
   <meta property="og:description" content="이현수의 포트폴리오입니다.">
@@ -28,9 +27,9 @@
       <div class="logo">LHSPortfolio</div>
       <nav>
         <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <!-- <a href="#about">About</a> -->
         <a href="#contact">Contact</a>
       </nav>
       <div class="nav-icons">
@@ -44,26 +43,168 @@
     <section id="hero" class="hero-section">
       <div class="hero-panel">
         <div class="hero-layout">
+
           <div class="hero-left">
-            <h1>
-              <span class="hero-name">이현수</span>
-              <span class="hero-role">Web Application Developer</span>
-            </h1>
-            <p class="hero-desc">사용자 경험을 중시하는 개발자입니다. <br> 실행력 있는 프로젝트를 함께 만들어갑니다.</p>
-            <div class="hero-actions">
-              <a href="#projects" class="hero-btn hero-btn-primary">프로젝트 보기</a>
-              <a href="#contact" class="hero-btn hero-btn-ghost">Contact →</a>
+            <p class="hero-eyebrow">PORTFOLIO</p>
+            <h1 class="hero-name">이현수</h1>
+            <div class="hero-divider"></div>
+            <span class="hero-role">Web Application Developer</span>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-about-header">
+              <span class="hero-about-label">ABOUT ME</span>
+              <span class="hero-about-line"></span>
+            </div>
+            <div class="hero-info-list">
+              <div class="hero-info-row">
+                <span class="hero-info-label">BORN</span>
+                <span class="hero-info-value">2000. 06. 20</span>
+              </div>
+              <div class="hero-info-row">
+                <span class="hero-info-label">BASED IN</span>
+                <span class="hero-info-value">경기도 안산시</span>
+              </div>
+              <div class="hero-info-row">
+                <span class="hero-info-label">EDUCATION</span>
+                <span class="hero-info-value">경운대학교 항공소프트웨어공학과</span>
+              </div>
+              <div class="hero-info-row">
+                <span class="hero-info-label">PHONE</span>
+                <span class="hero-info-value">010-6683-4125</span>
+              </div>
+              <div class="hero-info-row">
+                <span class="hero-info-label">EMAIL</span>
+                <span class="hero-info-value">dlgustn4125@gmail.com</span>
+              </div>
             </div>
           </div>
-          <div class="hero-visual">
-            <img src="./img/developer.png" alt="개발자 일러스트">
-          </div>
+
         </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container section-center">
+      <h2 class="section-title">프로젝트</h2>
+
+      <div class="project-grid">
 
       </div>
     </section>
 
-    <section id="about" class="container section-center">
+    <section id="skills" class="container section-center">
+      <h2 class="section-title">기술</h2>
+
+      <div class="skills-container-new">
+        <!-- Language -->
+        <div class="skill-category-row">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <i class="fas fa-code"></i>
+            </div>
+            <span class="category-label">Language</span>
+          </div>
+          <div class="category-badges">
+            <span class="tech-badge java">Java</span>
+            <span class="tech-badge js">JavaScript</span>
+            <span class="tech-badge ts">TypeScript</span>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-category-row">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <span class="category-label">Frontend</span>
+          </div>
+          <div class="category-badges">
+            <span class="tech-badge html">HTML / CSS</span>
+            <span class="tech-badge react">React</span>
+            <span class="tech-badge vue">Vue.js</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category-row">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <i class="fas fa-server"></i>
+            </div>
+            <span class="category-label">Backend</span>
+          </div>
+          <div class="category-badges">
+            <span class="tech-badge spring">Spring Boot</span>
+            <span class="tech-badge jpa">JPA / MyBatis</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-category-row">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <i class="fas fa-database"></i>
+            </div>
+            <span class="category-label">Database</span>
+          </div>
+          <div class="category-badges">
+            <span class="tech-badge mysql">MariaDB / MySQL</span>
+            <span class="tech-badge mysql">PostgreSQL</span>
+            <span class="tech-badge mysql">SQL Server</span>
+            <span class="tech-badge redis">Redis</span>
+          </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="skill-category-row">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <span class="category-label">DevOps</span>
+          </div>
+          <div class="category-badges">
+            <span class="tech-badge docker">Docker</span>
+            <span class="tech-badge jenkins">Jenkins</span>
+            <span class="tech-badge aws">AWS</span>
+            <span class="tech-badge git">Git / GitHub</span>
+          </div>
+        </div>
+
+        <!-- Collaboration -->
+        <div class="skill-category-row">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <i class="fas fa-users"></i>
+            </div>
+            <span class="category-label">Collaboration</span>
+          </div>
+          <div class="category-badges">
+            <span class="tech-badge notion">Notion</span>
+            <span class="tech-badge figma">Figma</span>
+          </div>
+        </div>
+
+        <!-- AI Tools -->
+        <div class="skill-category-row">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <i class="fas fa-robot"></i>
+            </div>
+            <span class="category-label">AI Tools</span>
+          </div>
+          <div class="category-badges">
+            <span class="tech-badge ai">Claude</span>
+            <span class="tech-badge ai">Gemini</span>
+            <span class="tech-badge ai">ChatGPT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 기존 자기 소개 -->
+    <!-- <section id="about" class="container section-center">
       <h2 class="section-title"><i class="fas fa-link"></i> ABOUT ME</h2>
 
       <div class="about-info-grid">
@@ -123,86 +264,11 @@
           </div>
           <div class="info-content">
             <h3 class="info-label">학력</h3>
-            <p class="info-value">경운대학교<br>(항공소프트웨어학과)</p>
+            <p class="info-value">경운대학교<br>(항공소프트웨어공학과)</p>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="skills" class="container section-center">
-      <h2 class="section-title">기술</h2>
-
-      <div class="skills-container-new">
-        <!-- Language -->
-        <div class="skill-category-row">
-          <div class="category-header">
-            <div class="category-icon-box">
-              <i class="fas fa-code"></i>
-            </div>
-            <span class="category-label">Language</span>
-          </div>
-          <div class="category-badges">
-            <span class="tech-badge java">Java</span>
-            <span class="tech-badge js">JavaScript</span>
-          </div>
-        </div>
-
-        <!-- Frontend -->
-        <div class="skill-category-row">
-          <div class="category-header">
-            <div class="category-icon-box">
-              <i class="fas fa-desktop"></i>
-            </div>
-            <span class="category-label">Frontend</span>
-          </div>
-          <div class="category-badges">
-            <span class="tech-badge html">HTML / CSS</span>
-            <span class="tech-badge react">React</span>
-          </div>
-        </div>
-
-        <!-- Backend -->
-        <div class="skill-category-row">
-          <div class="category-header">
-            <div class="category-icon-box">
-              <i class="fas fa-server"></i>
-            </div>
-            <span class="category-label">Backend</span>
-          </div>
-          <div class="category-badges">
-            <span class="tech-badge spring">Spring Boot</span>
-            <span class="tech-badge spring">Spring MVC</span>
-            <span class="tech-badge jpa">JPA / Hibernate</span>
-            <span class="tech-badge node">Node.js</span>
-            <span class="tech-badge mysql">MySQL</span>
-            <span class="tech-badge mongo">MongoDB</span>
-          </div>
-        </div>
-
-        <!-- DevOps -->
-        <div class="skill-category-row">
-          <div class="category-header">
-            <div class="category-icon-box">
-              <i class="fas fa-network-wired"></i>
-            </div>
-            <span class="category-label">DevOps</span>
-          </div>
-          <div class="category-badges">
-            <span class="tech-badge docker">Docker</span>
-            <span class="tech-badge aws">AWS</span>
-            <span class="tech-badge git">Git / GitHub</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="container section-center">
-      <h2 class="section-title">메인 프로젝트</h2>
-
-      <div class="project-grid">
-
-      </div>
-    </section>
+    </section> -->
 
     <section id="contact" class="cta-section">
       <div class="container section-center contact-shell">
