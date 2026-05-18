@@ -1,6 +1,6 @@
 :root {
   /* 색상 팔레트 */
-  --primary-color: #3b82f6;
+  --primary-color: #374151;
   --bg-main: #f9fafb;
   --bg-white: #ffffff;
   --text-main: #1f2937;
@@ -8,7 +8,7 @@
   --border-light: #e5e7eb;
 
   /* 강조 */
-  --accent-blue: #2563eb;
+  --accent-blue: #374151;
 
   /* 모양 */
   --radius-lg: 24px;
@@ -351,13 +351,13 @@ nav a:hover {
 }
 
 .project-card.detail-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f5f8ff 100%);
+  background: #ffffff;
   border-radius: 34px;
   padding: 2.1rem 2.4rem;
-  border: 1px solid #dbe4f6;
+  border: 1px solid #e5e7eb;
   color: #1f2937;
   text-align: left;
-  box-shadow: 0 18px 38px -30px rgba(30, 64, 175, 0.28);
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
@@ -385,8 +385,8 @@ nav a:hover {
   border-radius: 999px;
   font-size: 0.84rem;
   font-weight: 500;
-  color: #35518a;
-  background: #eaf1ff;
+  color: #374151;
+  background: #f3f4f6;
 }
 
 .project-title-row {
@@ -425,8 +425,8 @@ nav a:hover {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 1rem;
-  border-left: 2px solid #cbd8f5;
-  color: #64748b;
+  border-left: 2px solid #d1d5db;
+  color: #6b7280;
   font-size: 0.98rem;
   font-style: italic;
   line-height: 1.65;
@@ -436,7 +436,7 @@ nav a:hover {
 }
 
 .project-spotlight i {
-  color: #6b86c9;
+  color: #9ca3af;
   margin-top: 0.13rem;
 }
 
@@ -486,7 +486,7 @@ nav a:hover {
   width: 0.42rem;
   height: 0.42rem;
   border-radius: 50%;
-  background: #4f7df3;
+  background: #9ca3af;
   position: absolute;
   top: 0.55rem;
   left: 0;
@@ -514,7 +514,7 @@ nav a:hover {
 
 .stack-group-title {
   margin: 0.36rem 0 0;
-  color: #5b6c8f;
+  color: #6b7280;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -528,9 +528,9 @@ nav a:hover {
 .stack-pill {
   padding: 0.44rem 0.8rem;
   border-radius: 12px;
-  border: 1px solid #cfdbf4;
-  background: #f4f8ff;
-  color: #35518a;
+  border: 1px solid #e5e7eb;
+  background: #f3f4f6;
+  color: #374151;
   font-weight: 500;
   font-size: 0.88rem;
 }
@@ -539,17 +539,17 @@ nav a:hover {
 .project-role-section {
   margin-top: 0.4rem;
   padding: 1rem 1.2rem;
-  background: #f8faff;
-  border: 1px solid #dce8ff;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: 10px;
 }
 
 .role-team-badge {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #4f7df3;
-  background: #eaf1ff;
-  border: 1px solid #c5d9ff;
+  color: #6b7280;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
   border-radius: 999px;
   padding: 0.18rem 0.7rem;
   margin-left: 0.6rem;
@@ -593,18 +593,18 @@ nav a:hover {
   white-space: nowrap;
 }
 
-.trouble-problem { background: #fef2f2; color: #7f1d1d; }
-.trouble-problem .trouble-label { background: #fee2e2; color: #b91c1c; }
+.trouble-problem { background: #f9fafb; color: #1f2937; }
+.trouble-problem .trouble-label { background: #f3f4f6; color: #374151; }
 
-.trouble-solution { background: #fffbeb; color: #451a03; }
-.trouble-solution .trouble-label { background: #fef3c7; color: #92400e; }
+.trouble-solution { background: #f3f4f6; color: #1f2937; }
+.trouble-solution .trouble-label { background: #e5e7eb; color: #374151; }
 
-.trouble-result { background: #f0fdf4; color: #14532d; }
-.trouble-result .trouble-label { background: #dcfce7; color: #15803d; }
+.trouble-result { background: #f9fafb; color: #1f2937; }
+.trouble-result .trouble-label { background: #e5e7eb; color: #374151; }
 
 /* 성과 */
 .result-list li::before {
-  background: #10b981;
+  background: #6b7280;
 }
 
 /* AI 활용 */
@@ -630,9 +630,9 @@ nav a:hover {
   flex-shrink: 0;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #5b3fd4;
-  background: #f0ebff;
-  border: 1px solid #d4c5f9;
+  color: #374151;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
   border-radius: 999px;
   padding: 0.15rem 0.65rem;
 }
@@ -670,13 +670,13 @@ nav a:hover {
 }
 
 .card-link-light {
-  background: #3b82f6;
+  background: #1f2937;
   color: #ffffff;
 }
 
 .card-link-dark {
-  background: #e9f0ff;
-  color: #2f4e93;
+  background: #f3f4f6;
+  color: #374151;
 }
 
 /* CTA 섹션 */
