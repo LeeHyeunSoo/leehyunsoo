@@ -34,21 +34,48 @@ const projects = [
             "Database Redis",
             "Infrastructure AWS (EC2, RDS, S3)",
             "Infrastructure Docker",
-            "Monitoring Prometheus + Grafana",
+            "Monitoring Promet  heus + Grafana",
             "Tools GitHub",
             "Tools Postman"
         ],
+        role: {
+            team: "6인 팀 프로젝트",
+            mine: [
+                "직원 관리: 전자결재, 자격증 만료 알림, 근무 상태/이력 관리 기능 구현",
+                "실시간 알림: 수급자·직원 이벤트 기반 알림 시스템 구현",
+                "대시보드: 운영 현황 및 리스크 지표 시각화 화면 구현",
+                "업무 관리: 업무 현황 조회 및 처리 흐름 구현"
+            ]
+        },
+        troubleShooting: [
+            {
+                problem: "운영 데이터 증가로 배차 현황 조회 API 응답 지연 발생",
+                solution: "Redis 캐시 적용으로 반복 조회를 DB 대신 캐시에서 처리, 핵심 컬럼 인덱스 추가",
+                result: "API 응답속도 개선 및 DB 부하 감소"
+            },
+            {
+                problem: "도메인 복잡도가 높아 팀원 간 업무 충돌 및 기능 경계 모호",
+                solution: "도메인 이벤트 스토밍 기반 DDD 설계로 바운디드 컨텍스트 분리",
+                result: "역할 경계 명확화 및 병렬 개발 가능"
+            }
+        ],
+        results: [
+            "Redis 캐시 적용으로 반복 조회 DB 부하 감소",
+            "Prometheus/Grafana 기반 실시간 서비스 모니터링 구축",
+            "Docker 컨테이너화로 개발/운영 환경 일관성 확보",
+            "AI 요양일지 요약 기능으로 기록 작성 시간 단축"
+        ],
         aiAssist: [
-            "지피티 (기획 문안/요구사항 문서 정리)",
-            "제미나이 (리팩토링/반복 코드 보조)",
-            "지피티를 활용한 코드 리뷰, 코드 검사"
+            { tool: "ChatGPT", usage: "서비스 기획 단계에서 방문 요양 도메인 개념 학습 보조, 요구사항 명세서 초안 작성, 사용자 스토리 구체화에 활용. 복잡한 업무 흐름을 정리할 때 논리 구조 피드백을 받아 문서 완성도를 높였습니다." },
+            { tool: "Gemini", usage: "서비스/레포지토리 레이어의 반복적인 CRUD 코드 패턴 생성 보조로 개발 속도를 높였습니다. 기존 코드의 리팩토링 방향과 네이밍 컨벤션 검토에도 활용했습니다." },
+            { tool: "ChatGPT", usage: "PR 제출 전 코드 리뷰 보조로 활용. 비즈니스 로직 누락이나 예외 처리 미흡 부분을 사전에 발견하고, SQL 쿼리 최적화 아이디어를 얻는 데 사용했습니다." }
         ],
         repoConfig: {
             path: "golealda/be19-final-A-Team",
             url: "https://github.com/golealda/be19-final-A-Team"
         },
         duration: "2025.11 ~ 2026.01"
-        
+
     },
     {
         id: 2,
@@ -76,6 +103,7 @@ const projects = [
             "Backend Python 3.8 + FastAPI",
             "Backend BLE Scanner (bluepy)",
             "Backend ARP Scan + Whitelist",
+            "Backend Express.js (관리자 API)",
             "Frontend React Native (Expo)",
             "Frontend Socket.io-client + Axios",
             "Database MySQL (pymysql)",
@@ -83,8 +111,33 @@ const projects = [
             "Tools Tkinter",
             "Tools GitHub"
         ],
+        role: {
+            team: "4인 팀 프로젝트 (캡스톤)",
+            mine: [
+                "React Native 기반 관리자 앱 개발 (구역별 기기 현황 모니터링)",
+                "Express.js 기반 관리자 API 서버 및 DB 연동 구현",
+                "socket.io 실시간 알림 수신 및 관리자 앱 연동"
+            ]
+        },
+        troubleShooting: [
+            {
+                problem: "BLE 스캔 시 동일 기기의 중복 패킷이 과도하게 발생해 탐지 정확도 저하",
+                solution: "RSSI 임계값 필터링 + 시간 기반 중복 제거 캐시 적용, MAC 기반 화이트리스트 도입",
+                result: "오탐(false positive) 대폭 감소, 인가/비인가 분기 정확도 향상"
+            },
+            {
+                problem: "BLE 탐지 후 화면 차단까지 지연 발생, 사용자 UX 저하",
+                solution: "탐지 이벤트 수신 즉시 Tkinter 전체 화면 차단 트리거 구조로 개선",
+                result: "탐지-차단 응답 속도 개선"
+            }
+        ],
+        results: [
+            "BLE + ARP 이중 검증으로 인가 기기 자동 해제, 비인가 기기 즉시 차단",
+            "socket.io 실시간 알림으로 관리자 현장 대응 속도 향상",
+            "MySQL 로그 기반 탐지 이력 영구 저장 및 추적 가능"
+        ],
         aiAssist: [
-            "지피티 (트러블슈팅/실험 로그 정리)"
+            { tool: "ChatGPT", usage: "라즈베리 파이와 React Native 앱 간 socket.io 연결 오류 및 실시간 데이터 전송 이슈 해결에 활용. BLE 탐지 결과가 앱에 실시간으로 반영되지 않는 문제를 분석하는 과정에서 트러블슈팅 방향을 잡는 데 도움을 받았습니다. 실험 결과 로그 정리 및 문서화에도 사용했습니다." }
         ],
         repoConfig: {
             path: "4-1-capstone-palman/BLEsniffing",
@@ -117,11 +170,19 @@ const projects = [
         techStack: [
             "Frontend Unity",
             "Frontend AR Foundation",
+            "Database Google Spreadsheet",
             "Tools Marker-based Tracking",
             "Tools AR Prototype"
         ],
+        role: {
+            team: "3인 팀 프로젝트",
+            mine: [
+                "Unity AR Foundation 기반 마커 인식 로직 구현",
+                "Google Spreadsheet API와 Unity 간 연동으로 AR 콘텐츠 데이터 관리 구현"
+            ]
+        },
         aiAssist: [
-            "지피티 (기능 설계/문서 정리)"
+            { tool: "ChatGPT", usage: "Unity AR Foundation 공식 문서가 부족한 부분에서 마커 트래킹 구현 방법 탐색 보조. 멀티 이미지 트래킹 및 챗봇 연동 설계 방향을 구체화하는 데 활용했으며, 발표 자료 및 프로젝트 문서 작성에도 사용했습니다." }
         ],
         repoConfig: {
             path: "WHCC-KW/KW-Space",
@@ -156,6 +217,7 @@ const projects = [
             "Backend Java 17 + Spring Boot",
             "Backend Spring Security + JWT",
             "Backend JPA(Command) + MyBatis(Query)",
+            "Backend WebSocket",
             "Database MariaDB",
             "Build Gradle",
             "Tools GitHub",
@@ -163,8 +225,27 @@ const projects = [
             "Tools Notion + Discord",
             "Tools Figma + ERDCloud"
         ],
+        role: {
+            team: "4인 팀 프로젝트",
+            mine: [
+                "사진 리뷰 기능 구현 (이미지 업로드 및 리뷰 등록/조회)",
+                "WebSocket 기반 실시간 채팅 기능 구현"
+            ]
+        },
+        troubleShooting: [
+            {
+                problem: "단일 ORM(JPA) 사용 시 복잡한 다중 조인 조회에서 N+1 문제 및 쿼리 최적화 한계",
+                solution: "쓰기는 JPA(도메인 규칙 보장), 조회는 MyBatis(커스텀 SQL 최적화)로 분리하는 CQRS 패턴 적용",
+                result: "도메인 무결성과 조회 성능 동시 확보"
+            }
+        ],
+        results: [
+            "CQRS 패턴으로 도메인 규칙과 조회 성능 동시 확보",
+            "신고/제재 정책으로 서비스 운영 안정성 설계",
+            "JWT 기반 무상태 인증으로 서버 확장 가능 구조"
+        ],
         aiAssist: [
-            "클로드 코드 (쿼리/도메인 로직 검토 및 API 코드 작성 보조)"
+            { tool: "Claude Code", usage: "CQRS 패턴 적용 시 JPA와 MyBatis 경계 설정에 대한 설계 검토 보조. 다중 조인이 포함된 커뮤니티 피드 조회 쿼리 최적화 방향을 논의하고, Spring Security + JWT 인증 흐름 코드 작성 및 도메인 레이어 설계 리뷰에 활용했습니다." }
         ],
         repoConfig: {
             path: "Youth-Leap-Squad/EatToday_store",
@@ -199,6 +280,7 @@ const projects = [
         techStack: [
             "Backend Spring Boot",
             "Backend Spring Security + JPA",
+            "Backend WebSocket",
             "Frontend Vue.js + Vuetify",
             "Database MariaDB",
             "Infrastructure Docker + Kubernetes",
@@ -207,9 +289,29 @@ const projects = [
             "Tools Postman",
             "Tools Figma"
         ],
+        role: {
+            team: "5인 팀 프로젝트",
+            mine: [
+                "빙고 챌린지 기능 구현",
+                "포인트 적립/사용 시스템 구현",
+                "WebSocket 기반 가챠 이벤트 기능 구현"
+            ]
+        },
+        troubleShooting: [
+            {
+                problem: "수동 배포 반복으로 개발 사이클이 느리고 환경 차이로 인한 버그 발생",
+                solution: "Jenkins + ArgoCD 기반 GitOps CI/CD 파이프라인 구성, Docker + Kubernetes로 컨테이너 오케스트레이션",
+                result: "코드 푸시 후 자동 빌드/배포로 배포 사이클 단축, 환경 일관성 확보"
+            }
+        ],
+        results: [
+            "CI/CD 파이프라인 구성으로 배포 자동화 및 사이클 단축",
+            "Kubernetes 기반 컨테이너 오케스트레이션으로 확장 가능한 구조 확보",
+            "BMR 기반 맞춤 추천으로 개인화 헬스케어 서비스 구현"
+        ],
         aiAssist: [
-            "제미나이 (요구사항 정리/버그 분석)",
-            "클로드 코드 (컴포넌트/서비스 코드 보조)"
+            { tool: "Gemini", usage: "스프린트별 기능 요구사항을 팀 회의록에서 정리하는 보조 역할로 활용. 테스트 중 발생한 NPE, 인증 토큰 만료 등 버그의 원인 분석과 해결 방향 탐색에 사용했습니다." },
+            { tool: "Claude Code", usage: "Vue 컴포넌트 구조 설계 및 반복 UI 코드 작성 보조. Spring Boot 서비스 레이어 로직 검토, Jenkins + ArgoCD 파이프라인 스크립트 작성 방향 탐색에 활용했습니다." }
         ],
         repoConfig: {
             path: "Cal-Mate/be19-4th-Cal-Mate-Dev",
@@ -247,8 +349,14 @@ const projects = [
             "Feature STT/TTS",
             "Tools GitHub"
         ],
+        role: {
+            team: "3인 팀 프로젝트",
+            mine: [
+                "Flutter 기반 실시간 음성-수화 번역 앱 개발"
+            ]
+        },
         aiAssist: [
-            "지피티 (기능 아이디어 정리)"
+            { tool: "ChatGPT", usage: "STT/수화 번역 기능의 기술적 구현 가능성 탐색 보조. MediaPipe 랜드마크 데이터를 분류 모델에 연결하는 방향 설정에 활용. Flutter UI에서 실시간 번역 결과를 표시하는 구조 설계 아이디어를 얻고, 장애인 접근성 UX 흐름 설계에도 참고했습니다." }
         ],
         repoConfig: {
             path: "DoWaJo-KW/Speech-To-Sign-Translator",

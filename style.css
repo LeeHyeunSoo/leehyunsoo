@@ -465,17 +465,6 @@ nav a:hover {
   gap: 0.6rem;
 }
 
-.project-subsection h4 i {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #eaf1ff;
-  color: #3f62ae;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.96rem;
-}
 
 .feature-list {
   list-style: none;
@@ -544,6 +533,112 @@ nav a:hover {
   color: #35518a;
   font-weight: 500;
   font-size: 0.88rem;
+}
+
+/* 담당 역할 */
+.project-role-section {
+  margin-top: 0.4rem;
+  padding: 1rem 1.2rem;
+  background: #f8faff;
+  border: 1px solid #dce8ff;
+  border-radius: 10px;
+}
+
+.role-team-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #4f7df3;
+  background: #eaf1ff;
+  border: 1px solid #c5d9ff;
+  border-radius: 999px;
+  padding: 0.18rem 0.7rem;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+/* 트러블슈팅 */
+.project-trouble-section {
+  margin-top: 0.4rem;
+}
+
+.trouble-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.trouble-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.trouble-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  align-items: baseline;
+}
+
+.trouble-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.trouble-problem { background: #fef2f2; color: #7f1d1d; }
+.trouble-problem .trouble-label { background: #fee2e2; color: #b91c1c; }
+
+.trouble-solution { background: #fffbeb; color: #451a03; }
+.trouble-solution .trouble-label { background: #fef3c7; color: #92400e; }
+
+.trouble-result { background: #f0fdf4; color: #14532d; }
+.trouble-result .trouble-label { background: #dcfce7; color: #15803d; }
+
+/* 성과 */
+.result-list li::before {
+  background: #10b981;
+}
+
+/* AI 활용 */
+.ai-assist-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.ai-assist-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.ai-tool-name {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #5b3fd4;
+  background: #f0ebff;
+  border: 1px solid #d4c5f9;
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+}
+
+.ai-tool-usage {
+  color: #475569;
 }
 
 .card-footer {
@@ -988,11 +1083,11 @@ footer {
 @media print {
   @page {
     size: A4;
-    margin: 25mm 20mm;
+    margin: 12mm 15mm;
   }
 
   html {
-    font-size: 14px;
+    font-size: 11px;
   }
 
   body {
@@ -1006,6 +1101,7 @@ footer {
   }
 
   /* 1. 불필요한 요소 숨김 */
+  header,
   .bg-gradient-blur,
   .readme-modal-overlay,
   .nav-icons,
@@ -1016,35 +1112,24 @@ footer {
     display: none !important;
   }
 
-  /* 2. 레이아웃 재정의 */
+  /* 2. 레이아웃 — section에 page-break 걸지 않음 (짤림 주범) */
   .container {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 2mm !important;
   }
 
   section {
-    padding: 2rem 0 !important;
-    page-break-inside: avoid;
-  }
-
-  header {
-    position: static !important;
-    background: transparent !important;
-    border-bottom: none !important;
-    backdrop-filter: none !important;
-    height: auto !important;
-    padding: 0 0 1rem 0 !important;
-    display: none !important;
+    padding: 1rem 0 !important;
   }
 
   /* 3. Hero Section */
   .hero-section {
     padding-top: 0 !important;
-    padding-bottom: 2rem !important;
-    border-bottom: 2px solid #333;
-    margin-bottom: 2rem !important;
+    padding-bottom: 1.2rem !important;
+    border-bottom: 1.5px solid #444;
+    margin-bottom: 0.8rem !important;
   }
 
   .hero-panel {
@@ -1053,33 +1138,80 @@ footer {
 
   .hero-layout {
     display: grid !important;
-    grid-template-columns: 1.6fr 1fr !important;
-    gap: 2rem !important;
-    align-items: center !important;
+    grid-template-columns: 2fr 3fr !important;
+    gap: 0 !important;
+    align-items: stretch !important;
   }
 
   .hero-left {
-    text-align: left !important;
+    padding-right: 1.4rem !important;
+    border-right: 1px solid #ccc !important;
+    border-bottom: none !important;
+    justify-content: center !important;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.62rem !important;
+    color: #999 !important;
   }
 
   .hero-name {
-    font-size: 3rem !important;
+    font-size: 2.6rem !important;
     color: #000 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0.5rem !important;
+  }
+
+  .hero-divider {
+    background: #333 !important;
   }
 
   .hero-role {
-    font-size: 1.4rem !important;
+    font-size: 0.82rem !important;
     color: #555 !important;
-    font-weight: 600 !important;
+  }
+
+  .hero-right {
+    padding-left: 1.4rem !important;
+  }
+
+  .hero-about-label {
+    color: #999 !important;
+    font-size: 0.62rem !important;
+  }
+
+  .hero-about-line {
+    background: #ddd !important;
+  }
+
+  .hero-about-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .hero-info-row {
+    padding: 0.45rem 0 !important;
+    border-bottom: 1px solid #eee !important;
+  }
+
+  .hero-info-row:first-child {
+    border-top: 1px solid #eee !important;
+  }
+
+  .hero-info-label {
+    font-size: 0.6rem !important;
+    color: #aaa !important;
+    min-width: 76px !important;
+  }
+
+  .hero-info-value {
+    font-size: 0.82rem !important;
   }
 
   /* 4. Skills Section */
   .skills-table {
     border: 1px solid #d1d5db !important;
     border-radius: 10px !important;
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .skills-row {
@@ -1097,12 +1229,12 @@ footer {
 
   /* 5. Projects Section */
   .section-title {
-    font-size: 1.8rem !important;
+    font-size: 1.3rem !important;
     color: #000 !important;
-    border-bottom: 2px solid #000;
+    border-bottom: 1.5px solid #000;
     display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 1.5rem !important;
+    padding-bottom: 4px;
+    margin-bottom: 1rem !important;
   }
 
   .project-grid {
@@ -1116,8 +1248,11 @@ footer {
     box-shadow: none !important;
     background: #fff !important;
     gap: 0.5rem !important;
-    page-break-inside: avoid;
-    break-inside: avoid;
+  }
+
+  .project-main-grid {
+    grid-template-columns: 1fr 0.9fr !important;
+    gap: 1.2rem !important;
   }
 
   .project-title {
@@ -1133,16 +1268,6 @@ footer {
   .project-spotlight {
     font-size: 0.84rem !important;
     line-height: 1.5 !important;
-    padding-left: 0.75rem !important;
-  }
-
-  .project-main-grid {
-    grid-template-columns: 1fr 0.9fr !important;
-    gap: 1.2rem !important;
-  }
-
-  .project-subsection {
-    gap: 0.4rem !important;
   }
 
   .project-subsection h4 {
@@ -1155,29 +1280,33 @@ footer {
     line-height: 1.45 !important;
   }
 
-  .project-stack-groups {
-    gap: 0.35rem !important;
-  }
-
-  .project-stack-wrap {
-    gap: 0.3rem !important;
-  }
-
-  .stack-group {
-    grid-template-columns: 80px 1fr !important;
-    gap: 0.3rem !important;
-    align-items: center !important;
-  }
-
-  .stack-group-title {
-    font-size: 0.62rem !important;
-    margin-top: 0 !important;
-  }
-
   .stack-pill {
     padding: 0.18rem 0.5rem !important;
     font-size: 0.75rem !important;
     border-radius: 6px !important;
+  }
+
+  .project-role-section {
+    padding: 0.5rem 0.8rem !important;
+    background: #f8faff !important;
+    border: 1px solid #dce8ff !important;
+  }
+
+  .trouble-row {
+    padding: 0.4rem 0.7rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .trouble-label {
+    font-size: 0.62rem !important;
+  }
+
+  .ai-assist-list li {
+    font-size: 0.8rem !important;
+  }
+
+  .ai-tool-name {
+    font-size: 0.62rem !important;
   }
 
   .card-footer {
@@ -1188,23 +1317,6 @@ footer {
     gap: 0.75rem !important;
   }
 
-  /* 6. Footer */
-  footer {
-    border-top: 1px solid #ddd !important;
-    margin-top: 2rem !important;
-    padding-top: 1rem !important;
-    color: #666 !important;
-    font-size: 0.8rem !important;
-  }
-
-  .footer-print-only {
-    display: block !important;
-    margin-top: 5px;
-    font-family: monospace;
-    color: #444;
-  }
-
-  /* 버튼 링크 스타일 (PDF 최적화) */
   .card-link {
     display: inline-flex !important;
     align-items: center !important;
@@ -1224,7 +1336,22 @@ footer {
   }
 
   .card-link-dark {
-    background: #e9f0ff !important;
-    color: #2f4e93 !important;
+    display: none !important;
+  }
+
+  /* 6. Footer */
+  footer {
+    border-top: 1px solid #ddd !important;
+    margin-top: 1rem !important;
+    padding-top: 0.6rem !important;
+    color: #666 !important;
+    font-size: 0.72rem !important;
+  }
+
+  .footer-print-only {
+    display: block !important;
+    margin-top: 4px;
+    font-family: monospace;
+    color: #444;
   }
 }

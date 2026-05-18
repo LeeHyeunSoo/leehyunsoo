@@ -71,15 +71,12 @@ function renderProjects() {
     const techStack = project.techStack || project.tags.map(tag => tag.name);
     const techStackGroups = project.techStack ? groupTechStack(project.techStack) : null;
     const aiAssist = project.aiAssist || [];
+    const role = project.role || null;
+    const troubleShooting = project.troubleShooting || [];
+    const results = project.results || [];
 
     return `
       <article class="project-card detail-card">
-        <div class="project-top-row">
-          <div class="project-tag-group">
-            ${project.tags.map(tag => `<span class="project-pill">${tag.name}</span>`).join('')}
-          </div>
-        </div>
-
         <div class="project-title-row">
           <h3 class="project-title">${project.title}</h3>
           <span class="project-duration">${project.duration || ''}</span>
@@ -88,20 +85,28 @@ function renderProjects() {
         <p class="project-summary">${summary}</p>
 
         <p class="project-spotlight">
-          <i class="fas fa-lightbulb"></i>
           ${spotlight}
         </p>
 
+        ${role ? `
+        <section class="project-subsection project-role-section">
+          <h4>담당 역할 <span class="role-team-badge">${role.team}</span></h4>
+          <ul class="feature-list">
+            ${role.mine.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </section>
+        ` : ''}
+
         <div class="project-main-grid">
           <section class="project-subsection">
-            <h4><i class="fas fa-bolt"></i> 주요 기능</h4>
+            <h4>주요 기능</h4>
             <ul class="feature-list">
               ${project.features.map(feature => `<li>${feature}</li>`).join('')}
             </ul>
           </section>
 
           <section class="project-subsection">
-            <h4><i class="fas fa-screwdriver-wrench"></i> 기술 스택</h4>
+            <h4>기술 스택</h4>
             ${techStackGroups
               ? `
                 <div class="project-stack-groups">
@@ -124,13 +129,41 @@ function renderProjects() {
           </section>
         </div>
 
+        ${troubleShooting.length ? `
+        <section class="project-subsection project-trouble-section">
+          <h4>트러블슈팅</h4>
+          <div class="trouble-list">
+            ${troubleShooting.map(t => `
+              <div class="trouble-item">
+                <div class="trouble-row trouble-problem"><span class="trouble-label">문제</span><span>${t.problem}</span></div>
+                <div class="trouble-row trouble-solution"><span class="trouble-label">해결</span><span>${t.solution}</span></div>
+                <div class="trouble-row trouble-result"><span class="trouble-label">결과</span><span>${t.result}</span></div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+        ` : ''}
+
+        ${results.length ? `
+        <section class="project-subsection project-results-section">
+          <h4>성과</h4>
+          <ul class="feature-list result-list">
+            ${results.map(r => `<li>${r}</li>`).join('')}
+          </ul>
+        </section>
+        ` : ''}
+
         ${aiAssist.length
           ? `
             <section class="project-subsection">
-              <h4><i class="fas fa-robot"></i> AI 활용</h4>
-              <div class="project-stack-wrap">
-                ${aiAssist.map(tool => `<span class="stack-pill">${tool}</span>`).join('')}
-              </div>
+              <h4>AI 활용</h4>
+              <ul class="ai-assist-list">
+                ${aiAssist.map(item =>
+                  typeof item === 'string'
+                    ? `<li><span class="ai-tool-name">${item}</span></li>`
+                    : `<li><span class="ai-tool-name">${item.tool}</span><span class="ai-tool-usage">${item.usage}</span></li>`
+                ).join('')}
+              </ul>
             </section>
           `
           : ''
