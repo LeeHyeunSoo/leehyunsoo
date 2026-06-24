@@ -224,6 +224,14 @@ nav a:hover {
   display: block;
 }
 
+.hero-about-desc {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+}
+
 .hero-info-list {
   display: flex;
   flex-direction: column;
@@ -342,7 +350,8 @@ nav a:hover {
   position: relative;
 }
 
-.project-grid {
+.project-grid,
+.career-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.75rem;
@@ -411,6 +420,22 @@ nav a:hover {
   font-size: 1.05rem;
   font-family: 'JetBrains Mono', 'Consolas', monospace;
   white-space: nowrap;
+}
+
+.project-company {
+  margin: -0.4rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #6b7280;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.project-company i {
+  color: #9ca3af;
+  font-size: 0.85rem;
 }
 
 .project-summary {
@@ -1237,7 +1262,8 @@ footer {
     margin-bottom: 1rem !important;
   }
 
-  .project-grid {
+  .project-grid,
+  .career-grid {
     display: block !important;
   }
 

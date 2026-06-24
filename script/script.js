@@ -60,11 +60,7 @@ function applyPrintModeFromQuery() {
   }
 }
 
-function renderProjects() {
-  const grid = document.querySelector('.project-grid');
-  if (!grid) return;
-
-  grid.innerHTML = projects.map(project => {
+function buildProjectCard(project) {
     const desc = splitDescription(project.description);
     const summary = project.summary || desc.intro;
     const spotlight = project.spotlight || desc.detail || `${project.title}에서 실제 사용자 문제를 해결하기 위해 기획부터 구현까지 진행했습니다.`;
@@ -81,6 +77,8 @@ function renderProjects() {
           <h3 class="project-title">${project.title}</h3>
           <span class="project-duration">${project.duration || ''}</span>
         </div>
+
+        ${project.company ? `<p class="project-company"><i class="fas fa-briefcase"></i> ${project.company}</p>` : ''}
 
         <p class="project-summary">${summary}</p>
 
@@ -169,6 +167,7 @@ function renderProjects() {
           : ''
         }
 
+        ${project.repoConfig ? `
         <div class="card-footer">
           <a href="${project.repoConfig.url}" class="card-link card-link-light" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i> GitHub Repository
@@ -177,9 +176,24 @@ function renderProjects() {
             <i class="far fa-file-lines"></i> README
           </a>
         </div>
+        ` : ''}
       </article>
     `;
-  }).join('');
+}
+
+function renderProjects() {
+  const careerItems = projects.filter(project => project.type === 'career');
+  const projectItems = projects.filter(project => project.type !== 'career');
+
+  const careerGrid = document.querySelector('.career-grid');
+  if (careerGrid) {
+    careerGrid.innerHTML = careerItems.map(buildProjectCard).join('');
+  }
+
+  const projectGrid = document.querySelector('.project-grid');
+  if (projectGrid) {
+    projectGrid.innerHTML = projectItems.map(buildProjectCard).join('');
+  }
 }
 
 // 기존 openReadme 함수는 글로벌 스코프로 유지해야 onclick에서 호출 가능
